@@ -1,0 +1,14 @@
+.sidebar {
+  background-color: #2C343F;
+  height: calc(100vh - 3rem);
+
+  li i {
+    inline-size: 2rem;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+}

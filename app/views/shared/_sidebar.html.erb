@@ -1,0 +1,63 @@
+<div class="col-md-3 d-flex flex-column sidebar rounded-3 py-4 px-3">
+  <h2>watchlists</h2>
+  <form action="/" class="mb-2">
+    <div class="input-group mb-3">
+      <input type="text" class="form-control rounded-left rounded-3" name="query" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary rounded-right rounded-3" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+    </div>
+  </form>
+  <ul>
+    <li>
+      <%= link_to lists_path do %>
+        <i class="fa-solid fa-house active"></i>Home
+      <% end %>
+    </li>
+    <li>
+      <%= link_to lists_path do %>
+        <i class="fa-solid fa-clock-rotate-left"></i>History
+      <% end %>
+    </li>
+  </ul>
+  <hr>
+  <h6>My Lists</h6>
+  <h6>Saved Lists</h6>
+
+  <% if user_signed_in? && current_user.photo.attached? %>
+    <div class="dropdown mt-auto">
+      <div class="d-flex align-items-center border rounded-3 p-2" data-bs-toggle="dropdown" aria-expanded="false">
+        <%= cl_image_tag current_user.photo.key, class: "avatar me-3" %>
+        <p class="m-0"><strong><%= current_user.username %></strong></p>
+        <i class="fa-solid fa-ellipsis ms-auto me-2"></i>
+      </div>
+      <div class="dropdown-menu dropdown-menu-end">
+        <%= link_to "Edit", edit_user_registration_path(current_user), class: "dropdown-item" %>
+        <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+      </div>
+    </div>
+  <% elsif user_signed_in? && !current_user.photo.attached? %>
+    <div class="dropdown mt-auto">
+      <div class="d-flex align-items-center border rounded-3 p-2" data-bs-toggle="dropdown" aria-expanded="false">
+        <%= image_tag "guest.png", class: "avatar me-3" %>
+        <p class="m-0"><strong><%= current_user.username %></strong></p>
+        <i class="fa-solid fa-ellipsis ms-auto me-2"></i>
+      </div>
+      <div class="dropdown-menu dropdown-menu-end">
+        <%= link_to "Edit", edit_user_registration_path(current_user), class: "dropdown-item" %>
+        <%= link_to "Log out", destroy_user_session_path, data: {turbo_method: :delete}, class: "dropdown-item" %>
+      </div>
+    </div>
+  <% else %>
+    <div class="dropdown mt-auto">
+      <div class="d-flex align-items-center border rounded-3 p-2" data-bs-toggle="dropdown" aria-expanded="false">
+        <%= image_tag "guest.png", class: "avatar me-3" %>
+        <p class="m-0"><strong>Guest</strong></p>
+        <i class="fa-solid fa-ellipsis ms-auto me-2"></i>
+      </div>
+      <div class="dropdown-menu dropdown-menu-end">
+        <%= link_to "Log in", new_user_session_path, class: "dropdown-item" %>
+      </div>
+    </div>
+  <% end %>
+</div>

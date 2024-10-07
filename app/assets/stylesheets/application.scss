@@ -10,3 +10,13 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+body {
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+
+  background-color:#14171C;
+  color: white;
+}
