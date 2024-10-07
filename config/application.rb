@@ -16,6 +16,13 @@ module RailsWatchListV2
     # Common ones are `templates`, `generators`, or `middleware`, for example.
     config.autoload_lib(ignore: %w(assets tasks))
 
+    config.generators do |generate|
+      generate.assets false
+      generate.helper false
+      generate.test_framework :test_unit, fixture: false
+    end
+
+    config.action_controller.raise_on_missing_callback_actions = false if Rails.version >= "7.1.0"
     # Configuration for the application, engines, and railties goes here.
     #
     # These settings can be overridden in specific environments using the files
