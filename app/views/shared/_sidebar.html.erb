@@ -1,22 +1,22 @@
 <div class="col-md-3 d-flex flex-column sidebar rounded-3 py-4 px-3">
-  <h2>watchlists</h2>
+  <h2 class="mt-3 mb-5 mx-auto">watchlists</h2>
   <form action="/" class="mb-2">
     <div class="input-group mb-3">
-      <input type="text" class="form-control rounded-left rounded-3" name="query" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+      <input type="text" class="form-control rounded-start-3 border" name="query" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
       <div class="input-group-append">
-        <button class="btn btn-outline-secondary rounded-right rounded-3" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        <button class="btn btn-outline-secondary rounded-end-3" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
     </div>
   </form>
   <ul>
-    <li>
-      <%= link_to lists_path do %>
-        <i class="fa-solid fa-house active"></i>Home
+    <li class="my-2 p-2 rounded-3 active">
+      <%= link_to root_path do %>
+        <i class="fa-solid fa-house me-1"></i>Home
       <% end %>
     </li>
-    <li>
+    <li class="my-2 p-2 rounded-3">
       <%= link_to lists_path do %>
-        <i class="fa-solid fa-clock-rotate-left"></i>History
+        <i class="fa-solid fa-clock-rotate-left me-1"></i>History
       <% end %>
     </li>
   </ul>

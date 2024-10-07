@@ -4,11 +4,29 @@
 
   li i {
     inline-size: 2rem;
+    text-align: center;
   }
 
   ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
+  }
+
+  ul .active {
+    background-color: #556678;
+  }
+
+  li:hover {
+    background-color: #14171C;
+  }
+
+  h6 {
+    color: rgb(175, 175, 175);
+  }
+
+  h2 {
+    // color: #F27405;
+    color: #C0074C;
   }
 }
