@@ -1,6 +1,38 @@
 // Specific CSS for your home-page
-#hero {
-  background: linear-gradient(90deg, rgba(20,23,28,1) 0%, rgba(203,183,176,0) 50%, rgba(20,23,28,1) 100%), url(asset_path('home_banner.jpg'));
+.banner-background-image {
+  background: linear-gradient(90deg, rgba(20,23,28,1) 0%, rgba(203,183,176,0) 40%, rgba(20,23,28,1) 100%), url(asset_path('home_banner.jpg'));
   background-size: cover;
   background-position: center;
+  height: 40vh;
+  filter: blur(2px);
+  -webkit-filter: blur(2px);
+  grid-area: banner;
+  // .overlay {
+  //   background: linear-gradient(rgba(20,23,28,1) 0%, rgba(203,183,176,0) 50%, rgba(20,23,28,1) 100%);
+  //   height: 100%;
+  //   width: 100%;
+  // }
+}
+
+.banner {
+  display: grid;
+  grid-template-areas: "banner";
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+}
+
+.banner-text {
+  grid-area: banner;
+  z-index: 1;
+  h4 {
+    margin: 0;
+    opacity: .8;
+  }
+  h1 {
+    font-weight: bold;
+    font-size: 3em;
+  }
+  p {
+    opacity: .8;
+    margin-top: 1.5rem;
+  }
 }

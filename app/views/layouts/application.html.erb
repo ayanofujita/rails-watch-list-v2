@@ -12,8 +12,9 @@
 
   <body class="row m-0 p-4">
     <%= render "shared/sidebar" %>
-    <% render "shared/navbar" %>
     <%= render "shared/flashes" %>
-    <%= yield %>
+    <div class="col-md-9 h-100 ps-4">
+      <%= yield %>
+    </div>
   </body>
 </html>
