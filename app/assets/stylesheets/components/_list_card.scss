@@ -1,0 +1,28 @@
+.poster-group {
+  height: 144px;
+  width: 232px;
+  overflow-x: hidden;
+
+  img {
+    height: 100%;
+    width: 72px;
+    object-fit: cover;
+    transition: .3s ease;
+
+    &:not(:first-child) {
+      margin-left: -2rem;
+    }
+
+    &:hover {
+      & ~ img {
+        transform: translateX(2rem);
+      }
+    }
+  }
+}
+
+@media (min-width: 769px){
+  .poster-group {
+    height: 108px;
+  }
+}

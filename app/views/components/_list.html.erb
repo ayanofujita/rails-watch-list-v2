@@ -1,0 +1,10 @@
+<div class="list-card row p-2">
+  <div class="col-12 col-md-4 poster-group d-flex p-0 me-1">
+    <% list.first_5.each do |movie| %>
+      <img src="<%= movie.poster_url %>" alt="" class="border border-secondary rounded-3">
+    <% end %>
+  </div>
+  <div class="col-12 col-md-8 detail p-0">
+    <%= list.name %>
+  </div>
+</div>

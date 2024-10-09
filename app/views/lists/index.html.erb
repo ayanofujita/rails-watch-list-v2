@@ -1,1 +1,7 @@
-
+<h1>Lists</h1>
+<p>Sort by:</p>
+<div class="list-cards-container">
+  <% @lists.each do |list| %>
+    <%= render "components/list", list: list %>
+  <% end %>
+</div>
