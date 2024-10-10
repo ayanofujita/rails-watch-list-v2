@@ -1,2 +1,8 @@
 // Import page-specific CSS files here.
 @import "home";
+
+@media (max-width: 576px) {
+  body {
+    padding: 1rem !important;
+  }
+}

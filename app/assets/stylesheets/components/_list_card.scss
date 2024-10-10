@@ -1,13 +1,13 @@
 .poster-group {
-  height: 144px;
-  width: 232px;
+  height: 108px;
   overflow-x: hidden;
+  min-width: 232px;
 
   img {
     height: 100%;
-    width: 72px;
     object-fit: cover;
-    transition: .3s ease;
+    transition: .4s ease;
+    width: 72px;
 
     &:not(:first-child) {
       margin-left: -2rem;
@@ -21,8 +21,27 @@
   }
 }
 
+.list-details {
+  min-width: 270px;
+}
+
 @media (min-width: 769px){
   .poster-group {
-    height: 108px;
+    height: 144px;
+    width: 293px;
+
+    img {
+      width: 97px;
+
+      &:not(:first-child) {
+        margin-left: -3rem;
+      }
+
+      &:hover {
+        & ~ img {
+          transform: translateX(3rem);
+        }
+      }
+    }
   }
 }

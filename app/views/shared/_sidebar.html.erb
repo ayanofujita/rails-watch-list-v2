@@ -1,38 +1,40 @@
-<div class="col-md-3 d-flex flex-column sidebar rounded-3 py-4 px-3">
-  <h2 class="mt-3 mb-5 mx-auto">watchlists</h2>
-  <!--
-  <form action="/" class="mb-2">
-    <div class="input-group mb-3">
-      <input type="text" class="form-control rounded-start-3 border" name="query" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
-      <div class="input-group-append">
-        <button class="btn btn-outline-secondary rounded-end-3" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+<div class="col-1 col-sm-2 col-md-3 d-flex flex-column sidebar rounded-3 py-4 px-3">
+  <h2 class="mb-3 mx-auto">w<span>atchlists</span></h2>
+  <div class="sidebar-content">
+    <!--
+    <form action="/" class="mb-2">
+      <div class="input-group mb-3">
+        <input type="text" class="form-control rounded-start-3 border" name="query" placeholder="Search" aria-label="Search" aria-describedby="basic-addon2">
+        <div class="input-group-append">
+          <button class="btn btn-outline-secondary rounded-end-3" type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
       </div>
-    </div>
-  </form>
-  -->
-  <ul>
-    <li class="my-2 p-2 rounded-3 active">
-      <%= link_to root_path do %>
-        <i class="fa-solid fa-house me-1"></i>Home
-      <% end %>
-    </li>
-    <li class="my-2 p-2 rounded-3">
-      <%= link_to lists_path do %>
-        <i class="fa-solid fa-list-ul"></i>Watchlists
-      <% end %>
-    </li>
-    <li class="my-2 p-2 rounded-3">
-      <%= link_to lists_path do %>
-        <i class="fa-solid fa-film"></i>Movies
-      <% end %>
-    </li>
-  </ul>
-  <button class="btn btn-primary rounded-3 mt-3 text-white">
-    <i class="fa-solid fa-plus"></i> Create Watchlist
-  </button>
-  <hr>
-  <h6>My Lists</h6>
-  <h6>Saved Lists</h6>
+    </form>
+    -->
+    <ul>
+      <li class="my-2 p-2 rounded-3 active">
+        <%= link_to root_path do %>
+          <i class="fa-solid fa-house me-1"></i><span>Home</span>
+        <% end %>
+      </li>
+      <li class="my-2 p-2 rounded-3">
+        <%= link_to lists_path do %>
+          <i class="fa-solid fa-list-ul"></i><span>Watchlists</span>
+        <% end %>
+      </li>
+      <li class="my-2 p-2 rounded-3">
+        <%= link_to lists_path do %>
+          <i class="fa-solid fa-film"></i><span>Movies</span>
+        <% end %>
+      </li>
+    </ul>
+    <button class="btn btn-primary rounded-3 mt-2 text-white w-100">
+      <i class="fa-solid fa-plus"></i><span> Create Watchlist</span>
+    </button>
+    <hr>
+    <h6><span>My Lists</span></h6>
+    <h6><span>Saved Lists</span></h6>
+  </div>
 
   <% if user_signed_in? && current_user.photo.attached? %>
     <div class="dropdown mt-auto">
