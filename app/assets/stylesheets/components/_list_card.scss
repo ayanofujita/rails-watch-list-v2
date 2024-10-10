@@ -1,6 +1,13 @@
+.list-card {
+  &:hover {
+    background-color: #2C343F;
+  }
+}
+
 .poster-group {
   height: 108px;
   min-width: 232px;
+  overflow-x: hidden;
 
   img {
     height: 100%;
@@ -25,6 +32,22 @@
   min-width: 240px;
 }
 
+.list-description {
+  opacity: .9;
+}
+
+.list-additional {
+  opacity: .6;
+
+  p {
+    margin-bottom: 0 !important;
+  }
+
+  img {
+    opacity: 1;
+  }
+}
+
 @media (min-width: 769px){
   .poster-group {
     height: 144px;
@@ -47,6 +70,18 @@
 
   .list-details {
     max-width: calc(100% - 309px);
-    min-width: 300px;
+    min-width: 337px;
+
+    .d-none {
+      display: block !important;
+    }
+
+    img {
+      margin-right: 0.5rem !important;
+    }
+
+    .list-description {
+      display: block;
+    }
   }
 }

@@ -24,7 +24,7 @@ body {
 }
 
 * {
-  transition: .4s;
+  transition: .3s;
 }
 
 .main {
@@ -41,7 +41,7 @@ body {
     padding: 1rem !important;
   }
 
-  main {
+  .main {
     height: calc(100vh - 2rem);
     padding-left: 12px;
   }
