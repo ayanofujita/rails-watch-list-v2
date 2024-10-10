@@ -12,11 +12,43 @@
 @import "pages/index";
 
 body {
+  margin: 0 !important;
+  padding: 1.5rem;
+  background-color:#14171C;
+  color: white;
+
   a {
     text-decoration: none;
     color: inherit;
   }
+}
 
-  background-color:#14171C;
-  color: white;
+* {
+  transition: .4s;
+}
+
+.main {
+  height: calc(100vh - 3rem);
+  overflow-y: auto;
+  padding-left: 24px;
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+@media (max-width: 576px) {
+  body {
+    padding: 1rem !important;
+  }
+
+  main {
+    height: calc(100vh - 2rem);
+    padding-left: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  body {
+    font-size: 14px;
+  }
 }

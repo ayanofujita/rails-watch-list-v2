@@ -1,6 +1,5 @@
 .poster-group {
   height: 108px;
-  overflow-x: hidden;
   min-width: 232px;
 
   img {
@@ -22,7 +21,8 @@
 }
 
 .list-details {
-  min-width: 270px;
+  max-width: calc(100% - 248px);
+  min-width: 240px;
 }
 
 @media (min-width: 769px){
@@ -43,5 +43,10 @@
         }
       }
     }
+  }
+
+  .list-details {
+    max-width: calc(100% - 309px);
+    min-width: 300px;
   }
 }
