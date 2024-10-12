@@ -1,24 +1,26 @@
-<div class="list-card d-flex flex-wrap p-2 mb-2 rounded-3">
-  <div class="poster-group d-flex p-0 me-3 mb-2 rounded-3">
-    <% list.first_5.each do |movie| %>
-      <img src="<%= movie.poster_url %>" alt="" class="border border-secondary rounded-3">
-    <% end %>
-  </div>
-  <div class="detail p-0 list-details">
-    <h5><strong><%= list.name %></strong></h5>
-    <p class="list-description d-none">
-      <%= list.description.length > 130 ? list.description[0,130] + "..." : list.description %>
-    </p>
-    <div class="list-additional d-flex align-items-center">
-      <% if list.user.photo.attached? %>
-        <%= cl_image_tag list.user.photo.key, class: "avatar-xsmall me-3" %>
-      <% else %>
-        <%= image_tag 'guest.png', class: "avatar-xsmall me-3" %>
+<%= link_to list_path list do %>
+  <div class="list-card d-flex flex-wrap p-2 mb-2 rounded-3">
+    <div class="poster-group d-flex p-0 me-3 mb-2 rounded-3">
+      <% list.first_5.each do |movie| %>
+        <img src="<%= movie.poster_url %>" alt="" class="border border-secondary rounded-3">
       <% end %>
-      <p class="me-3 d-none"><small><strong><%= list.user.username %></strong></small></p>
-      <p class="me-3"><small><%= list.movies.count %> Films</small></p>
-      <p class="me-3"><small><i class="fa-solid fa-heart"></i> 418</small></p>
-      <p class="me-3"><small><i class="fa-solid fa-comment"></i> <%= list.reviews.count %></small></p>
+    </div>
+    <div class="detail p-0 list-details">
+      <h5><strong><%= list.name %></strong></h5>
+      <p class="list-description d-none">
+        <%= list.description.length > 130 ? list.description[0,130] + "..." : list.description %>
+      </p>
+      <div class="list-additional d-flex align-items-center">
+        <% if list.user.photo.attached? %>
+          <%= cl_image_tag list.user.photo.key, class: "avatar-xsmall me-3" %>
+        <% else %>
+          <%= image_tag 'guest.png', class: "avatar-xsmall me-3" %>
+        <% end %>
+        <p class="me-3 d-none"><small><strong><%= list.user.username %></strong></small></p>
+        <p class="me-3"><small><%= list.movies.count %> Films</small></p>
+        <p class="me-3"><small><i class="fa-solid fa-heart"></i> 418</small></p>
+        <p class="me-3"><small><i class="fa-solid fa-comment"></i> <%= list.reviews.count %></small></p>
+      </div>
     </div>
   </div>
-</div>
+<% end %>
