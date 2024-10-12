@@ -28,9 +28,11 @@
         <% end %>
       </li>
     </ul>
-    <button class="btn btn-primary rounded-3 mt-2 text-white w-100">
-      <i class="fa-solid fa-plus"></i><span> Create Watchlist</span>
-    </button>
+    <%= link_to new_list_path do %>
+      <button class="btn btn-primary rounded-3 mt-2 text-white w-100">
+        <i class="fa-solid fa-plus"></i><span> Create Watchlist</span>
+      </button>
+    <% end %>
     <hr>
     <h6><span>My Lists</span></h6>
     <h6><span>Saved Lists</span></h6>
