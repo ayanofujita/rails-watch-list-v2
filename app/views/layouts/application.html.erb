@@ -10,11 +10,13 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body class="row">
-    <%= render "shared/sidebar" %>
-    <%= render "shared/flashes" %>
-    <div class="col-9 col-sm-10 col-md-8 col-lg-9 main">
-      <%= yield %>
+  <body>
+    <div class="row main-container mx-auto">
+      <%= render "shared/sidebar" %>
+      <%= render "shared/flashes" %>
+      <div class="col-9 col-sm-10 col-md-8 col-lg-9 main">
+        <%= yield %>
+      </div>
     </div>
   </body>
 </html>
