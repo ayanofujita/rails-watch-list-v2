@@ -58,8 +58,20 @@ body {
   }
 }
 
-// @media (min-width: 1400px) {
-//   body {
-//     font-size: 20px;
-//   }
-// }
+.dropdown-menu {
+  overflow-x: auto;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  border-radius: 10px !important;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  border-radius: 10px !important;
+}
+
+::-webkit-scrollbar-button {
+  display: none !important;
+}

@@ -9,4 +9,6 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   resources :lists
   root "pages#home"
+
+  post "/movies/fetch_movie", to: "movies#fetch_movie"
 end

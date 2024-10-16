@@ -6,12 +6,12 @@
       <%= f.input :description %>
       <section class="movie-selection mt-5">
         <p>Add Movies (at least 5): </p>
-        <div class="dropdown">
+        <div class="dropdown" data-controller="search-movie">
           <div class="input-group mb-3" data-bs-toggle="dropdown">
-            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="button-addon2">
-            <button class="btn btn-outline-secondary" type="button" id="button-addon2"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <input type="text" class="form-control" placeholder="Movie title" aria-label="Movie title" data-search-movie-target="input" data-action="keyup->search-movie#search">
+            <button class="btn btn-outline-secondary" type="button" data-action="click->search-movie#search"><i class="fa-solid fa-magnifying-glass"></i></button>
           </div>
-          <ul class="dropdown-menu w-100">
+          <ul class="dropdown-menu w-100" data-search-movie-target="list">
             <li><p class="dropdown-item">Sample title</p></li>
             <li><p class="dropdown-item">Sample title</p></li>
           </ul>

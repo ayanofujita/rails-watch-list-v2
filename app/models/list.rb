@@ -14,4 +14,12 @@ class List < ApplicationRecord
   def first_5
     self.movies.first(5)
   end
+
+  include PgSearch::Model
+
+  pg_search_scope :search_by_name_and_description,
+  against: [ :name, :description ],
+  using: {
+    tsearch: { prefix: true }
+  }
 end
