@@ -1,8 +1,10 @@
 <h1><%= @list.name %></h1>
-<p><%= @list.description %></p>
+<p class="opacity-75"><%= @list.description %></p>
+<hr>
 <p>Sort by:</p>
+<hr>
 <div class="movies-container">
   <% @list.movies.each do |movie| %>
-    <img src="<%= movie.poster_url %>" alt="" style="height: 108px; width: 72px">
+    <img src="<%= movie.poster_url %>" alt="" style="height: 190px; width: 128px">
   <% end %>
 </div>
