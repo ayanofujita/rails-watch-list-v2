@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>RailsWatchListV2</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
+    <%= javascript_importmap_tags %>
+  </head>
+
+  <body>
+    <div class="row main-container mx-auto">
+      <%= render "shared/sidebar" %>
+      <%= render "shared/flashes" %>
+      <div class="col-9 col-sm-10 col-md-8 col-lg-9 d-flex flex-column justify-content-around align-items-center main">
+        <div style="max-width: 500px;" class="w-100">
+          <%= yield %>
+        </div>
+        <div></div>
+      </div>
+    </div>
+  </body>
+</html>

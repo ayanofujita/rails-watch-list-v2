@@ -19,12 +19,12 @@
       </li>
       <li class="my-2 p-2 rounded-3">
         <%= link_to lists_path do %>
-          <i class="fa-solid fa-list-ul"></i><span>Watchlists</span>
+          <i class="fa-solid fa-list-ul me-1"></i><span>Watchlists</span>
         <% end %>
       </li>
       <li class="my-2 p-2 rounded-3">
         <%= link_to lists_path do %>
-          <i class="fa-solid fa-film"></i><span>Movies</span>
+          <i class="fa-solid fa-film me-1"></i><span>Movies</span>
         <% end %>
       </li>
     </ul>
@@ -39,8 +39,8 @@
   <% if user_signed_in? && current_user.photo.attached? %>
     <div class="dropdown mt-auto">
       <div class="d-flex align-items-center border rounded-3 p-2" data-bs-toggle="dropdown" aria-expanded="false">
-        <%= cl_image_tag current_user.photo.key, class: "avatar me-3" %>
-        <p class="m-0"><strong><%= current_user.username %></strong></p>
+        <%= cl_image_tag current_user.photo.key, class: "avatar me-2" %>
+        <p class="me-2 mb-0 sidebar-username"><strong><%= current_user.username %></strong></p>
         <i class="fa-solid fa-ellipsis ms-auto me-2"></i>
       </div>
       <div class="dropdown-menu dropdown-menu-end">
@@ -51,8 +51,8 @@
   <% elsif user_signed_in? && !current_user.photo.attached? %>
     <div class="dropdown mt-auto">
       <div class="d-flex align-items-center border rounded-3 p-2" data-bs-toggle="dropdown" aria-expanded="false">
-        <%= image_tag "guest.png", class: "avatar me-3" %>
-        <p class="m-0"><strong><%= current_user.username %></strong></p>
+        <%= image_tag "guest.png", class: "avatar me-2" %>
+        <p class="me-2 mb-0 sidebar-username"><strong><%= current_user.username %></strong></p>
         <i class="fa-solid fa-ellipsis ms-auto me-2"></i>
       </div>
       <div class="dropdown-menu dropdown-menu-end">
@@ -63,8 +63,8 @@
   <% else %>
     <div class="dropdown mt-auto">
       <div class="d-flex align-items-center border rounded-3 p-2" data-bs-toggle="dropdown" aria-expanded="false">
-        <%= image_tag "guest.png", class: "avatar me-3" %>
-        <p class="m-0"><strong>Guest</strong></p>
+        <%= image_tag "guest.png", class: "avatar me-2" %>
+        <p class="me-2 mb-0 sidebar-username"><strong>Guest</strong></p>
         <i class="fa-solid fa-ellipsis ms-auto me-2"></i>
       </div>
       <div class="dropdown-menu dropdown-menu-end">

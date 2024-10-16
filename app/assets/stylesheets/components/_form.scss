@@ -1,0 +1,21 @@
+form {
+  color: white !important;
+  input {
+    background: transparent !important;
+    color: white !important;
+  }
+
+  [type="submit"] {
+    border: var(--bs-border-width) var(--bs-border-style) var(--bs-border-color);
+
+    &:hover {
+      background-color: #2C343F !important;
+    }
+
+    margin: 1rem 0 2rem;
+  }
+}
+
+.form-text {
+  color: white;
+}
