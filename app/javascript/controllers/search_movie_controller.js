@@ -19,7 +19,12 @@ export default class extends Controller {
         if (data.Search) {
           this.listTarget.innerHTML = ""
           data.Search.forEach ((movie) => {
-            this.listTarget.insertAdjacentHTML("beforeend", `<li id="${movie.imdbID}"><button class="dropdown-item" type="button">${movie.Title} (${movie.Year})</button></li>`)
+            const list = `
+              <li data-imdb="${movie.imdbID}" data-url="${movie.Poster}" data-controller="add-movie" data-action="click->add-movie#add">
+                <button class="dropdown-item" type="button">${movie.Title} (${movie.Year})</button>
+              </li>
+            `
+            this.listTarget.insertAdjacentHTML("beforeend", list)
           })
         } else {
           this.listTarget.innerHTML = `<li><button class="dropdown-item disabled">${data.Error}</button></li>`
