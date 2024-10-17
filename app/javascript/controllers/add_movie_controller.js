@@ -6,7 +6,6 @@ export default class extends Controller {
   }
 
   add() {
-    console.log("clicked!")
     const movie_imdb = this.element.dataset.imdb
     const movie_poster = this.element.dataset.url
     const img = `
@@ -14,7 +13,8 @@ export default class extends Controller {
       <button type="button" class="text-white" aria-label="Remove" data-controller="remove-poster" data-action="click->remove-poster#remove">
         <i class="fa-solid fa-xmark"></i>
       </button>
-      <img src="${movie_poster}" alt="" class="movie-poster" data-imdb="${movie_imdb}">
+      <img src="${movie_poster}" alt="" class="movie-poster">
+      <input type="hidden" name="list[movies][]" value="${movie_imdb}">
     <div>
     `
     const container = document.getElementById('selected-movies-container')

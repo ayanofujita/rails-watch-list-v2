@@ -6,13 +6,22 @@ class List < ApplicationRecord
   validates :name, length: { maximum: 55 }
   validates :description, length: { maximum: 400 }
   validate :has_atleast_5
+  validate :no_duplicate_movies
+
+  def first_5
+    self.movies.first(5)
+  end
+
+  private
 
   def has_atleast_5
     errors.add(:movies, "must have at least 5 movies") if movies.size < 5
   end
 
-  def first_5
-    self.movies.first(5)
+  def no_duplicate_movies
+    if movies.uniq.size != movies.size
+      errors.add(:movies, "can't have duplicates")
+    end
   end
 
   include PgSearch::Model

@@ -5,5 +5,6 @@ class AddColumnsToMovies < ActiveRecord::Migration[7.1]
     add_column :movies, :released, :date
     add_column :movies, :runtime, :integer
     add_column :movies, :director, :string
+    add_column :movies, :imdb_id, :string
   end
 end

@@ -5,6 +5,8 @@ require 'date'
 
 List.delete_all
 User.delete_all
+Movie.delete_all
+Genre.delete_all
 
 puts "creating 4 main users..."
 users = [
@@ -66,7 +68,7 @@ lists.each_with_index do |list, index|
   html_file = URI.parse(url).read
   html_doc = Nokogiri::HTML.parse(html_file)
 
-  html_doc.search(".poster-list li img").first(10).each do |element|
+  html_doc.search(".poster-list li img").first(20).each do |element|
     movie_title = element.attribute("alt").value
     encoded_title = URI.encode_www_form_component(movie_title)
     url = "http://www.omdbapi.com/?t=#{encoded_title}&apikey=#{ENV['OMDb_apikey']}"
@@ -84,7 +86,8 @@ lists.each_with_index do |list, index|
               year: movie["Year"].to_i,
               rated: movie["Rated"] || "Not Rated",
               released: movie["Released"] ? Date.parse(movie["Released"]) : nil,
-              runtime: movie["Runtime"] ? movie["Runtime"].split.first.to_i : 0
+              runtime: movie["Runtime"] ? movie["Runtime"].split.first.to_i : 0,
+              imdb_id: movie["imdbID"]
             )
             if movie["Genre"]
               movie["Genre"].split(", ").each do |genre|
@@ -98,7 +101,7 @@ lists.each_with_index do |list, index|
       end
     rescue Timeout::Error
       puts "The request for #{movie_title} timed out."
-    rescue Standard::Error => e
+    rescue StandardError => e
       puts "Error occured: #{e.message}"
     end
   end

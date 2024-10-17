@@ -48,6 +48,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_09_021252) do
   create_table "genres_movies", id: false, force: :cascade do |t|
     t.integer "genre_id", null: false
     t.integer "movie_id", null: false
+    t.index ["genre_id", "movie_id"], name: "index_genres_movies_on_genre_id_and_movie_id", unique: true
+    t.index ["movie_id", "genre_id"], name: "index_genres_movies_on_movie_id_and_genre_id"
   end
 
   create_table "lists", force: :cascade do |t|
@@ -62,6 +64,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_09_021252) do
   create_table "lists_movies", id: false, force: :cascade do |t|
     t.integer "list_id", null: false
     t.integer "movie_id", null: false
+    t.index ["list_id", "movie_id"], name: "index_lists_movies_on_list_id_and_movie_id", unique: true
+    t.index ["movie_id", "list_id"], name: "index_lists_movies_on_movie_id_and_list_id"
   end
 
   create_table "movies", force: :cascade do |t|
@@ -76,6 +80,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_10_09_021252) do
     t.date "released"
     t.integer "runtime"
     t.string "director"
+    t.string "imdb_id"
   end
 
   create_table "reviews", force: :cascade do |t|

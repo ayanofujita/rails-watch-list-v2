@@ -12,12 +12,11 @@
             <button class="btn btn-outline-secondary" type="button" data-action="click->search-movie#search"><i class="fa-solid fa-magnifying-glass"></i></button>
           </div>
           <ul class="dropdown-menu w-100" data-search-movie-target="list">
-            <li><p class="dropdown-item">Sample title</p></li>
-            <li><p class="dropdown-item">Sample title</p></li>
+            <li><p class="dropdown-item disabled">Enter movie title</p></li>
           </ul>
         </div>
         <p>Selected movies:</p>
-        <div id="selected-movies-container" class="w-100 d-flex"></div>
+        <div id="selected-movies-container" class="w-100 d-flex flex-wrap"></div>
       </section>
       <%= f.submit "Add List", class: "btn btn-primary" %>
     <% end %>
