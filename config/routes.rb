@@ -11,4 +11,6 @@ Rails.application.routes.draw do
   root "pages#home"
 
   post "/movies/fetch_movie", to: "movies#fetch_movie"
+
+  get "/movies", to: "movies#index"
 end

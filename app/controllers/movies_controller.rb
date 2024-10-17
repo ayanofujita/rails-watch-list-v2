@@ -11,4 +11,7 @@ class MoviesController < ApplicationController
       format.json { render json: response }
     end
   end
+
+  def index
+  end
 end

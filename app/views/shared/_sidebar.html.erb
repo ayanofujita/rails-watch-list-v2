@@ -11,19 +11,19 @@
       </div>
     </form>
     -->
-    <ul>
-      <li class="my-2 p-2 rounded-3 active">
-        <%= link_to root_path do %>
+    <ul data-controller="toggle-nav-items">
+      <li class="my-2 p-2 rounded-3 <%= 'active' if current_page?(root_path) %>">
+        <%= link_to root_path, class: "d-block w-100" do %>
           <i class="fa-solid fa-house me-1"></i><span>Home</span>
         <% end %>
       </li>
-      <li class="my-2 p-2 rounded-3">
-        <%= link_to lists_path do %>
+      <li class="my-2 p-2 rounded-3 <%= 'active' if current_page?(lists_path) %>">
+        <%= link_to lists_path, class: "d-block w-100" do %>
           <i class="fa-solid fa-list-ul me-1"></i><span>Watchlists</span>
         <% end %>
       </li>
-      <li class="my-2 p-2 rounded-3">
-        <%= link_to lists_path do %>
+      <li class="my-2 p-2 rounded-3 <%= 'active' if current_page?(movies_path) %>">
+        <%= link_to movies_path, class: "d-block w-100" do %>
           <i class="fa-solid fa-film me-1"></i><span>Movies</span>
         <% end %>
       </li>
