@@ -1,5 +1,5 @@
 <div class="w-100 h-100 d-flex flex-column justify-content-around align-items-center">
-  <div style="max-width: 563px;" class="w-100">
+  <div style="max-width: 580px;" class="w-100">
     <h1>Create a new watchlist</h1>
     <%= simple_form_for @list do |f| %>
       <%= f.input :name %>
@@ -8,8 +8,13 @@
         <p>Add Movies (at least 5): </p>
         <div class="dropdown" data-controller="search-movie">
           <div class="input-group mb-3" data-bs-toggle="dropdown">
-            <input type="text" class="form-control" placeholder="Movie title" aria-label="Movie title" data-search-movie-target="input" data-action="keyup->search-movie#search">
+            <input type="text" class="form-control <%= 'is-invalid' if @list.errors[:movies].present? %>" placeholder="Movie title" aria-label="Movie title" data-search-movie-target="input" data-action="keyup->search-movie#search">
             <button class="btn btn-outline-secondary" type="button" data-action="click->search-movie#search"><i class="fa-solid fa-magnifying-glass"></i></button>
+            <% if @list.errors[:movies].present? %>
+              <div class="invalid-feedback">
+                <%= @list.errors[:movies].join(', ') %>
+              </div>
+            <% end %>
           </div>
           <ul class="dropdown-menu w-100" data-search-movie-target="list">
             <li><p class="dropdown-item disabled">Enter movie title</p></li>

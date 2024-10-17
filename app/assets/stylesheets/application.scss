@@ -61,25 +61,27 @@ body {
 img.movie-poster {
   height: 190px;
   width: 128px;
+  margin-bottom: .5rem;
+  margin-right: .5rem;
 }
 
 .dropdown-menu {
   overflow-x: auto;
 }
 
-/* Track */
-::-webkit-scrollbar-track {
-  border-radius: 10px !important;
-}
+// /* Track */
+// ::-webkit-scrollbar-track {
+//   border-radius: 10px !important;
+// }
 
-/* Handle */
-::-webkit-scrollbar-thumb {
-  border-radius: 10px !important;
-}
+// /* Handle */
+// ::-webkit-scrollbar-thumb {
+//   border-radius: 10px !important;
+// }
 
-::-webkit-scrollbar-button {
-  display: none !important;
-}
+// ::-webkit-scrollbar-button {
+//   display: none !important;
+// }
 
 #selected-movies-container {
   & > div {

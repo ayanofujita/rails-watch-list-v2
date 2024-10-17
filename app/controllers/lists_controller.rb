@@ -49,10 +49,8 @@ class ListsController < ApplicationController
     end
 
     if @list.save
-      debugger
       redirect_to list_path(@list)
     else
-      debugger
       render :new, status: :unprocessable_entity
     end
   end
