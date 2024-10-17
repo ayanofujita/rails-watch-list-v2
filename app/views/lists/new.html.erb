@@ -1,5 +1,5 @@
 <div class="w-100 h-100 d-flex flex-column justify-content-around align-items-center">
-  <div style="max-width: 544px;" class="w-100">
+  <div style="max-width: 563px;" class="w-100">
     <h1>Create a new watchlist</h1>
     <%= simple_form_for @list do |f| %>
       <%= f.input :name %>
@@ -17,7 +17,7 @@
           </ul>
         </div>
         <p>Selected movies:</p>
-        <div id="selected-movies-container" class="w-100"></div>
+        <div id="selected-movies-container" class="w-100 d-flex"></div>
       </section>
       <%= f.submit "Add List", class: "btn btn-primary" %>
     <% end %>

@@ -80,3 +80,24 @@ img.movie-poster {
 ::-webkit-scrollbar-button {
   display: none !important;
 }
+
+#selected-movies-container {
+  & > div {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+  }
+
+  button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(20, 23, 28, 0.5);
+    border: none;
+    outline: none;
+
+    &:hover {
+      background-color: rgb(20, 23, 28);
+    }
+  }
+}
