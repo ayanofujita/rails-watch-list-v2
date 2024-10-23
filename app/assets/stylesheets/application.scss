@@ -53,8 +53,8 @@ body {
 }
 
 @media (max-width: 768px) {
-  body {
-    font-size: 14px;
+  .main, .btn {
+    font-size: .9rem !important;
   }
 }
 
@@ -63,6 +63,10 @@ img.movie-poster {
   width: 128px;
   margin-bottom: .5rem;
   margin-right: .5rem;
+}
+
+.btn-secondary {
+  background-color: #2C343F;
 }
 
 // /* Track */
