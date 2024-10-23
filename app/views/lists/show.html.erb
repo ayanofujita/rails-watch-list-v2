@@ -8,3 +8,6 @@
     <img src="<%= movie.poster_url %>" alt="" class="movie-poster">
   <% end %>
 </div>
+<%= button_to edit_list_path @list, class: "btn btn-primary rounded-3 mt-2 text-white w-100", method: :get do %>
+  <i class="fa-solid fa-plus"></i><span> Create Watchlist</span>
+<% end %>

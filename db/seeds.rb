@@ -42,7 +42,7 @@ lists = [
   },
   {
     name: "🐉🎭✨ 𝕍𝕀𝕊𝕌𝔸𝕃𝕃𝕐 𝙸𝙽𝚂𝙰𝙽𝙴👹🧞‍♀️👁️",
-    description: "Am I missing your favorite hallucinogenic, meditative, harrowing, dreamy, or chaotic visual feast? Comment here (with year and/or director please!) and I'll include your recs in the list./nNote: I have not updated the above list in a while, it's from when this was WAY smaller. At some point I'll go through the most common suggestions again and edit to reflect them.",
+    description: "Am I missing your favorite hallucinogenic, meditative, harrowing, dreamy, or chaotic visual feast? Comment here (with year and/or director please!) and I'll include your recs in the list.\nNote: I have not updated the above list in a while, it's from when this was WAY smaller. At some point I'll go through the most common suggestions again and edit to reflect them.",
     user: User.find_by(username: "AyyyaSayonara"),
     url: "https://letterboxd.com/etolkin/list/filmlist:28697007/"
   },
