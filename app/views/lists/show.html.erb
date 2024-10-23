@@ -6,7 +6,7 @@
 <hr>
 <p>Sort by:</p>
 <hr>
-<div class="movies-container">
+<div class="movies-container d-flex flex-wrap justify-content-around">
   <% @list.movies.each do |movie| %>
     <img src="<%= movie.poster_url %>" alt="" class="movie-poster">
   <% end %>

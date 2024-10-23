@@ -69,6 +69,17 @@
 
 @media (max-width: 576px) {
   .sidebar {
-    height: calc(100vh - 2rem);
+    // height: calc(100vh - 2rem);
+    position: fixed;
+    bottom: 1rem;
+    right: 1rem;
+    z-index: 1;
+    height: fit-content;
+    border: 1px solid grey ;
+    transition: .5s ease;
+
+    h2 {
+      inline-size: 58px;
+    }
   }
 }

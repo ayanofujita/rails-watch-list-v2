@@ -1,6 +1,7 @@
-<div class="col-1 col-sm-2 col-md-3 d-flex flex-column sidebar rounded-3 py-4 px-3">
-  <h2 class="mb-3 mx-auto">w<span>atchlists</span></h2>
-  <div class="sidebar-content">
+<div class="col-1 col-sm-2 col-md-3 d-flex flex-column sidebar rounded-3 py-4 px-3"
+  data-controller="toggle-sidebar">
+  <h2 class="my-2 mx-auto" data-action="click->toggle-sidebar#toggle"><strong>W</strong><span>atchlists</span></h2>
+  <div class="sidebar-content mt-2">
     <!--
     <form action="/" class="mb-2">
       <div class="input-group mb-3">
@@ -14,17 +15,17 @@
     <ul data-controller="toggle-nav-items">
       <li class="my-2 p-2 rounded-3 <%= 'active' if current_page?(root_path) %>">
         <%= link_to root_path, class: "d-block w-100" do %>
-          <i class="fa-solid fa-house me-1"></i><span>Home</span>
+          <i class="fa-solid fa-house"></i><span class="ms-1">Home</span>
         <% end %>
       </li>
       <li class="my-2 p-2 rounded-3 <%= 'active' if current_page?(lists_path) %>">
         <%= link_to lists_path, class: "d-block w-100" do %>
-          <i class="fa-solid fa-list-ul me-1"></i><span>Watchlists</span>
+          <i class="fa-solid fa-list-ul"></i><span class="ms-1">Watchlists</span>
         <% end %>
       </li>
       <li class="my-2 p-2 rounded-3 <%= 'active' if current_page?(movies_path) %>">
         <%= link_to movies_path, class: "d-block w-100" do %>
-          <i class="fa-solid fa-film me-1"></i><span>Movies</span>
+          <i class="fa-solid fa-film"></i><span class="ms-1">Movies</span>
         <% end %>
       </li>
     </ul>
