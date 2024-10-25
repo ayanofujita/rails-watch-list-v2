@@ -77,3 +77,4 @@ gem "sassc-rails"
 gem "devise"
 gem "cloudinary"
 gem "pg_search"
+gem 'acts_as_favoritor'

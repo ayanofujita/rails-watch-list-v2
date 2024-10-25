@@ -1,0 +1,4 @@
+<h1>EDIT <%= @list.name %></h1>
+<%= link_to list_path(@list), data: {turbo_method: :delete, turbo_confirm: "Delete list?"} do %>
+  <i class="fa-solid fa-trash"></i>
+<% end %>

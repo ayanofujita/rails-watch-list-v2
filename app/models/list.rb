@@ -7,9 +7,14 @@ class List < ApplicationRecord
   validates :description, length: { maximum: 400 }
   validate :has_atleast_5
   validate :no_duplicate_movies
+  acts_as_favoritable
 
   def first_5
     self.movies.first(5)
+  end
+
+  def likes_count
+    self.favoritors.count
   end
 
   private
