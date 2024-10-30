@@ -1,0 +1,7 @@
+.movies-container {
+  img.movie-poster {
+    &:hover {
+      transform: translateY(-2rem);
+    }
+  }
+}
