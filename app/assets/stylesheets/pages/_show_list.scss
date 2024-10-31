@@ -4,4 +4,9 @@
       transform: translateY(-2rem);
     }
   }
+
+  .movie-info {
+    -webkit-box-shadow:inset 0px 0px 20px 4px #030303;
+    box-shadow:inset 0px 0px 20px 4px #030303;
+  }
 }

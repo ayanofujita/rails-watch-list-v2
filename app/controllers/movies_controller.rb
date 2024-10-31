@@ -12,6 +12,13 @@ class MoviesController < ApplicationController
     end
   end
 
+  def fetch_movie_info
+    @movie = Movie.find_by(imdb_id: params[:movie_id])
+    respond_to do |format|
+      format.text { render partial: "shared/movie_info", locals: { movie: @movie }, formats: [:html]}
+    end
+  end
+
   def index
   end
 end
