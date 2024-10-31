@@ -1,12 +1,12 @@
 .movies-container {
   img.movie-poster {
     &:hover {
-      transform: translateY(-2rem);
+      transform: translateY(-1rem);
     }
   }
 
   .movie-info {
-    -webkit-box-shadow:inset 0px 0px 20px 4px #030303;
-    box-shadow:inset 0px 0px 20px 4px #030303;
+    -webkit-box-shadow:inset 0px 0px 20px 4px #0d0f13;
+    box-shadow:inset 0px 0px 20px 4px #0d0f13;
   }
 }

@@ -35,6 +35,7 @@ export default class extends Controller {
         else {
           if (currentDiv) currentDiv.remove()
           lastImage.insertAdjacentHTML('afterend', data)
+          document.querySelector('.movie-info').scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
       })
   }
