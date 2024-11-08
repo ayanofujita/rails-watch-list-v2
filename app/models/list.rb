@@ -5,7 +5,7 @@ class List < ApplicationRecord
   validates :name, presence: true
   validates :name, length: { maximum: 55 }
   validates :description, length: { maximum: 400 }
-  validate :has_atleast_5
+  # validate :has_atleast_5
   validate :no_duplicate_movies
   acts_as_favoritable
 
