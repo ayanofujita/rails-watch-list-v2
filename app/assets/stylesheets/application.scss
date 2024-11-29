@@ -41,6 +41,12 @@ body {
   }
 }
 
+[id^='home-']* {
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
 @media (max-width: 576px) {
   body {
     padding: 1rem !important;
@@ -56,13 +62,6 @@ body {
   .main, .btn {
     font-size: .9rem !important;
   }
-}
-
-img.movie-poster {
-  height: 190px;
-  width: 128px;
-  margin-bottom: .5rem;
-  margin-right: .5rem;
 }
 
 .btn-secondary {

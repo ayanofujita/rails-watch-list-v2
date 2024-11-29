@@ -8,3 +8,18 @@
     <p>Discover, create, and share your ultimate movie watchlists – save others’ lists, review them, and build your own collection in one seamless experience.</p>
   </div>
 </div>
+<div class="mt-5">
+  <h2>Popular Movies</h2>
+  <div class="d-flex overflow-auto mb-5 mt-4" id="home-movies">
+    <% @popular_movies.each do |movie| %>
+      <img src="<%= movie.poster_url %>" alt="<%= movie.poster_url %>'s poster" class="movie-poster me-5"
+      id="<%= movie.imdb_id %>" data-action="click->toggle-movie-info#show">
+    <% end %>
+  </div>
+  <h2>Popular Movie Lists</h2>
+  <div class="d-flex overflow-auto mb-5 mt-4" id="home-lists">
+    <% @popular_lists.each do |list| %>
+      <%= render "components/list", list: list %>
+    <% end %>
+  </div>
+</div>

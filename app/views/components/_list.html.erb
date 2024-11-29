@@ -7,7 +7,7 @@
     </div>
     <div class="detail p-0 list-details">
       <h5><strong><%= list.name %></strong></h5>
-      <p class="list-description d-none">
+      <p class="list-description <%= "d-none" if current_page?(root_path) %>">
         <%= list.description.length > 130 ? list.description[0,130] + "..." : list.description %>
       </p>
       <div class="list-additional d-flex align-items-center">
@@ -16,7 +16,7 @@
         <% else %>
           <%= image_tag 'guest.png', class: "avatar-xsmall me-3" %>
         <% end %>
-        <p class="me-3 d-none"><small><strong><%= list.user.username %></strong></small></p>
+        <p class="me-3 <%= "d-none" if current_page?(root_path) %>"><small><strong><%= list.user.username %></strong></small></p>
         <p class="me-3"><small><%= list.movies.count %> Films</small></p>
         <p class="me-3"><small><i class="fa-solid fa-heart"></i> 418</small></p>
         <p class="me-3"><small><i class="fa-solid fa-comment"></i> <%= list.reviews.count %></small></p>

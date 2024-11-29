@@ -68,20 +68,22 @@
     }
   }
 
-  .list-details {
-    max-width: calc(100% - 309px);
-    min-width: 337px;
+  // div:has(:not(#home-lists)) {
+    .list-details {
+      max-width: calc(100% - 309px);
+      min-width: 337px;
 
-    .d-none {
-      display: block !important;
-    }
+      // .d-none {
+      //   display: block !important;
+      // }
 
-    img {
-      margin-right: 0.5rem !important;
-    }
+      img {
+        margin-right: 0.5rem !important;
+      }
 
-    .list-description {
-      display: block;
+      // .list-description {
+      //   display: block;
+      // }
     }
-  }
+  // }
 }
