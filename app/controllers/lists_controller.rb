@@ -1,7 +1,16 @@
 class ListsController < ApplicationController
   before_action :set_list, only: [:show, :edit, :update, :destroy]
+
   def index
     @lists = List.all
+    if params[:sort] == 'name'
+      @lists = @lists.order(name: :asc)
+    elsif params[:sort] == 'likes'
+      @lists = List.joins("LEFT JOIN favorites ON favorites.favoritable_id = lists.id")
+      .group(:id)
+      .select('lists.*, COUNT(favorites.id) AS likes_count')
+      .order('likes_count DESC')
+    end
   end
 
   def show

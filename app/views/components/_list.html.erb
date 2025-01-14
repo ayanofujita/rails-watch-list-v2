@@ -18,7 +18,7 @@
         <% end %>
         <p class="me-3 <%= "d-none" if current_page?(root_path) %>"><small><strong><%= list.user.username %></strong></small></p>
         <p class="me-3"><small><%= list.movies.count %> Films</small></p>
-        <p class="me-3"><small><i class="fa-solid fa-heart"></i> 418</small></p>
+        <p class="me-3"><small><i class="fa-solid fa-heart"></i> <%= list.likes_count %></small></p>
         <p class="me-3"><small><i class="fa-solid fa-comment"></i> <%= list.reviews.count %></small></p>
       </div>
     </div>

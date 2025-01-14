@@ -7,8 +7,6 @@ Rails.application.routes.draw do
   get "up" => "rails/health#show", as: :rails_health_check
 
   # Defines the root path route ("/")
-  resources :lists
-
   root "pages#home"
 
   post "/movies/fetch_movie", to: "movies#fetch_movie"
@@ -16,7 +14,7 @@ Rails.application.routes.draw do
 
   get "/movies", to: "movies#index"
 
-  resources :list do
+  resources :lists do
     resource :favorite, only: [:create, :destroy]
   end
 

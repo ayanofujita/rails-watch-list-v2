@@ -1,6 +1,12 @@
 <h1>Lists</h1>
 <hr>
-<p>Sort by:</p>
+<div class="d-flex align-items-center">
+  <p class="me-2 mb-0">Sort by:</p>
+  <%= link_to 'name', lists_path(sort: 'name'),
+    class: "border opacity-75 rounded-3 text-white p-2 me-2 #{'bg-secondary' if params[:sort] == 'name'}" %>
+  <%= link_to 'likes', lists_path(sort: 'likes'),
+    class: "border opacity-75 rounded-3 text-white p-2 #{'bg-secondary' if params[:sort] == 'likes'}" %>
+</div>
 <hr>
 <div class="list-cards-container">
   <% @lists.each do |list| %>

@@ -7,11 +7,11 @@
     <% end %>
   <% elsif user_signed_in? %>
     <% if @list.favorited_by?(current_user) %>
-      <%= link_to list_favorite_path(@list), method: :delete, class: "border opacity-75 rounded-3 text-white p-2" do %>
+      <%= link_to list_favorite_path(@list), data: {turbo_method: :delete}, class: "border opacity-75 rounded-3 text-white p-2" do %>
         <i class="fa-solid fa-heart"></i> Watchlist Saved
       <% end %>
     <% else %>
-      <%= link_to list_favorite_path(@list), method: :post, class: "border opacity-75 rounded-3 text-white p-2" do %>
+      <%= link_to list_favorite_path(@list), data: {turbo_method: :post}, class: "border opacity-75 rounded-3 text-white p-2" do %>
         <i class="fa-regular fa-heart"></i> Save Watchlist
       <% end %>
     <% end %>
