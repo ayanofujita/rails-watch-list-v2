@@ -349,6 +349,7 @@ DEPENDENCIES
   font-awesome-sass (~> 6.1)
   importmap-rails
   jbuilder
+  nokogiri (~> 1.14)
   pg
   pg_search
   puma (>= 5.0)

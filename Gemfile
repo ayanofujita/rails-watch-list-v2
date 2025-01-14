@@ -79,3 +79,4 @@ gem "cloudinary"
 gem "pg"
 gem "pg_search"
 gem 'acts_as_favoritor'
+gem 'nokogiri', '~> 1.14'
