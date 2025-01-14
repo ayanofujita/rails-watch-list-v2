@@ -1,29 +1,35 @@
 <h1><%= @list.name %></h1>
 <p class="opacity-75 mb-4"><%= @list.description %></p>
-<% if user_signed_in? && @list.user == current_user %>
-  <%= link_to edit_list_path(@list), class: "border opacity-75 rounded-3 text-white p-2" do %>
-    <i class="fa-solid fa-pen-to-square"></i> Edit Watchlist
-  <% end %>
-<% elsif user_signed_in? %>
-  <% if @list.favorited_by?(current_user) %>
-    <%= button_to list_favorite_path(@list), method: :delete, class: "border opacity-75 rounded-3 text-white p-2" do %>
-      <i class="fa-solid fa-heart"></i> Watchlist Saved
+<div class="d-flex align-items-center justify-content-between my-3">
+  <% if user_signed_in? && @list.user == current_user %>
+    <%= link_to edit_list_path(@list), class: "border opacity-75 rounded-3 text-white p-2" do %>
+      <i class="fa-solid fa-pen-to-square"></i> Edit Watchlist
+    <% end %>
+  <% elsif user_signed_in? %>
+    <% if @list.favorited_by?(current_user) %>
+      <%= link_to list_favorite_path(@list), method: :delete, class: "border opacity-75 rounded-3 text-white p-2" do %>
+        <i class="fa-solid fa-heart"></i> Watchlist Saved
+      <% end %>
+    <% else %>
+      <%= link_to list_favorite_path(@list), method: :post, class: "border opacity-75 rounded-3 text-white p-2" do %>
+        <i class="fa-regular fa-heart"></i> Save Watchlist
+      <% end %>
     <% end %>
   <% else %>
-    <%= button_to list_favorite_path(@list), method: :post, class: "border opacity-75 rounded-3 text-white p-2" do %>
-      <i class="fa-regular fa-heart"></i> Save Watchlist
+    <%= link_to new_user_session_path, class: "border opacity-75 rounded-3 text-white p-2" do %>
+      Log in or Sign up to save this watchlist!
     <% end %>
   <% end %>
-<% else %>
-  <%= link_to new_user_session_path, class: "border opacity-75 rounded-3 text-white p-2" do %>
-    Log in or Sign up to save this watchlist!
-  <% end %>
-<% end %>
-<hr class="mt-5">
-<p>Sort by:</p>
-<hr>
+  <div class="d-flex align-items-center">
+    <p class="me-2 mb-0">Sort by:</p>
+    <%= link_to 'title', list_path(@list, sort: 'title'),
+      class: "border opacity-75 rounded-3 text-white p-2 me-2 #{'bg-secondary' if params[:sort] == 'title'}" %>
+    <%= link_to 'rating', list_path(@list, sort: 'rating'),
+      class: "border opacity-75 rounded-3 text-white p-2 #{'bg-secondary' if params[:sort] == 'rating'}" %>
+  </div>
+</div>
 <div class="movies-container d-flex flex-wrap justify-content-around" data-controller="toggle-movie-info">
-  <% @list.movies.each do |movie| %>
+  <% @movies.each do |movie| %>
     <img src="<%= movie.poster_url %>" alt="<%= movie.poster_url %>'s poster" class="movie-poster"
       data-movie-id="<%= movie.imdb_id %>" data-action="click->toggle-movie-info#show">
   <% end %>

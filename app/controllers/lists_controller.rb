@@ -5,6 +5,12 @@ class ListsController < ApplicationController
   end
 
   def show
+    @movies = List.find(params[:id]).movies
+    if params[:sort] == 'title'
+      @movies = @movies.order(title: :asc)
+    elsif params[:sort] == 'rating'
+      @movies = @movies.order(rating: :desc)
+    end
   end
 
   def new
