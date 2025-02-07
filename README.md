@@ -19,7 +19,7 @@ bundle install
 
 ### ENV Variables
 Create `.env` file
-```
+<br>
 Inside `.env`, set these variables.
 ```
 CLOUDINARY_URL=your_own_cloudinary_url_key
