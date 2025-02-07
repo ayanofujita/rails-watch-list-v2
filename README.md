@@ -13,7 +13,7 @@ A web application that allows users to create, manage, and share personalized mo
 
 App home: https://watch-list-v2-08a859a1db81.herokuapp.com/
 <br>
-v1: https://old-aya-watchlist-20fde36147bd.herokuapp.com/
+v1: https://old-aya-watchlist-ba13f4b7059b.herokuapp.com/
 <br>
 v1 repo: https://github.com/ayanofujita/rails-watch-list
 ## Getting Started
