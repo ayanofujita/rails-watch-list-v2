@@ -1,0 +1,7 @@
+<ul data-controller="toggle-nav-items">
+  <% lists.each do |list| %>
+    <span><li class="text-truncate my-1 py-1 px-2 rounded-3 <%= 'active' if current_page? list_path(list) %>">
+      <%= link_to list.name, list_path(list) %></span>
+    </li></span>
+  <% end %>
+</ul>

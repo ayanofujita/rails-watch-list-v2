@@ -33,8 +33,10 @@
       <i class="fa-solid fa-plus"></i><span> Create Watchlist</span>
     <% end %>
     <hr>
-    <h6><span>My Lists</span></h6>
-    <h6><span>Saved Lists</span></h6>
+    <h6 class="mt-3"><span>My Lists</span></h6>
+    <%= render "components/sidebar_list", lists: current_user.lists if current_user %>
+    <h6 class="mt-3"><span>Saved Lists</span></h6>
+    <%= render "components/sidebar_list", lists: current_user.favorite_lists if current_user %>
   </div>
 
   <% if user_signed_in? && current_user.photo.attached? %>
