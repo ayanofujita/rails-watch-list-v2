@@ -1,4 +1,11 @@
-<h1>Edit watchlist</h1>
+<div class="d-flex justify-content-between align-items-center">
+  <h1>Edit watchlist</h1>
+  <%= link_to "Delete Watchlist",
+                  list_path(@list),
+                  data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" },
+                  class: "border opacity-75 rounded-3 text-white p-2 bg-danger",
+                  style: "height: fit-content;" %>
+</div>
 
 <%= form_with(model: @list, class: "my-4") do |f| %>
   <div class="mb-3">
@@ -13,10 +20,6 @@
 
   <div class="d-flex justify-content-between align-items-center">
     <%= f.submit "Update Watchlist", class: "border opacity-75 rounded-3 text-white p-2" %>
-    <%= link_to "Delete Watchlist",
-                list_path(@list),
-                data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" },
-                class: "border opacity-75 rounded-3 text-white p-2 bg-danger" %>
   </div>
 <% end %>
 
