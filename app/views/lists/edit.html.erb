@@ -1,5 +1,5 @@
 <div class="d-flex justify-content-between align-items-center">
-  <h1>Edit watchlist</h1>
+  <h1>Edit List Details</h1>
   <%= link_to "Delete Watchlist",
                   list_path(@list),
                   data: { turbo_method: :delete, turbo_confirm: "Are you sure you want to delete this list?" },
@@ -24,7 +24,7 @@
 <% end %>
 
 <div class="mt-4">
-  <h2>Movies in Watchlist</h2>
+  <h2>Edit Movies in List</h2>
   <div class="d-flex flex-wrap justify-content-around">
     <% @list.movies.each do |movie| %>
       <div class="position-relative movie-card m-2">
