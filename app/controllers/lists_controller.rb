@@ -3,6 +3,7 @@ class ListsController < ApplicationController
 
   def index
     @lists = List.all
+
     if params[:sort] == 'name'
       @lists = @lists.order(name: :asc)
     elsif params[:sort] == 'likes'
@@ -82,6 +83,13 @@ class ListsController < ApplicationController
   def destroy
     @list.destroy
     redirect_to lists_path
+  end
+
+  def movie_destroy
+    list = List.find(params[:list_id])
+    movie = Movie.find(params[:id])
+    list.movies.delete(movie)
+    redirect_to edit_list_path(list)
   end
 
   private

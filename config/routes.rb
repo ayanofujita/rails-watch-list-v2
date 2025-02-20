@@ -18,4 +18,6 @@ Rails.application.routes.draw do
     resource :favorite, only: [:create, :destroy]
   end
 
+  delete "lists/:list_id/movies/:id", to: "lists#movie_destroy", as: "list_movie"
+
 end
