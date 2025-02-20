@@ -23,7 +23,7 @@
           <i class="fa-solid fa-list-ul"></i><span class="ms-1">Watchlists</span>
         <% end %>
       </li>
-      <li class="my-2 p-2 rounded-3 <%= 'active' if current_page?(movies_path) %>">
+      <li class="d-none my-2 p-2 rounded-3 <%= 'active' if current_page?(movies_path) %>">
         <%= link_to movies_path, class: "d-block w-100" do %>
           <i class="fa-solid fa-film"></i><span class="ms-1">Movies</span>
         <% end %>
